@@ -1,0 +1,229 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-size: 1.6rem;
+  background-color: var(--default-background-color);
+  font-family: var(--default-font);
+  line-height: var(--default-line-height);
+  color: var(--default-text-color);
+
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(black, 0);
+}
+
+img {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+img,
+svg {
+  vertical-align: middle;
+}
+
+.container {
+  padding-left: var(--corner);
+  padding-right: var(--corner);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: calc(117rem + var(--corner));
+}
+
+.section {
+  $root: &;
+
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+
+  @media (min-width: 1024px) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &__grid {
+    display: grid;
+    row-gap: 4rem;
+
+    @media (min-width: 1024px) {
+      display: block;
+      position: relative;
+      padding-top: 12rem;
+      padding-bottom: 12rem;
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 800;
+    font-size: 2.6rem;
+    text-align: center;
+
+    @media (min-width: 375px) {
+      font-size: 3.4rem;
+    }
+
+    @media (min-width: 1024px) {
+      width: 43%;
+      text-align: left;
+      font-size: 4.8rem;
+      margin-bottom: 4.8rem;
+    }
+  }
+
+  &__text {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 600;
+    font-size: 1.6rem;
+    text-align: center;
+
+    @media (min-width: 375px) {
+      font-size: 2rem;
+    }
+
+    @media (min-width: 1024px) {
+      text-align: left;
+    }
+
+    & + & {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 100%;
+        height: 6.4rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 2.4rem;
+
+        @media (min-width: 1024px) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__content {
+    display: grid;
+    row-gap: 6.4rem;
+
+    @media (min-width: 1024px) {
+      width: 43%;
+      row-gap: 3rem;
+    }
+  }
+
+  &__media {
+    aspect-ratio: 2 / 1;
+
+    @media (min-width: 1024px) {
+      position: absolute;
+      top: 5%;
+      bottom: 5%;
+      width: 45%;
+      aspect-ratio: auto;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    &--grayscale {
+      filter: grayscale(1);
+    }
+
+    &--video {
+      aspect-ratio: 16 / 9;
+      border: 1.6rem solid var(--video-border-color);
+      border-radius: 2.4rem;
+
+      iframe {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+      }
+
+      @media (min-width: 1024px) {
+        top: 2vw;
+        bottom: 2vw;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+    }
+  }
+
+  &:nth-child(even) {
+    background-color: var(--primary-color);
+
+    #{$root}__title,
+    #{$root}__text {
+      color: var(--invert-color);
+    }
+
+    #{$root}__text {
+      &::before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 25 24'%3E%3Cpath fill='%23000' d='m12.5 0 .92 9.78 7.57-6.27-6.27 7.57 9.78.92-9.78.92 6.27 7.57-7.57-6.27L12.5 24l-.92-9.78-7.57 6.27 6.27-7.57L.5 12l9.78-.92-6.27-7.57 7.57 6.27L12.5 0Z'/%3E%3C/svg%3E");
+      }
+    }
+
+    @media (min-width: 1024px) {
+      #{$root}__media {
+        right: var(--corner);
+      }
+    }
+  }
+
+  &:nth-child(odd) {
+    background-color: var(--invert-color);
+
+    #{$root}__title,
+    #{$root}__text {
+      color: var(--primary-color);
+    }
+
+    #{$root}__text {
+      &::before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 25 24'%3E%3Cpath fill='%23ffffff' d='m12.5 0 .92 9.78 7.57-6.27-6.27 7.57 9.78.92-9.78.92 6.27 7.57-7.57-6.27L12.5 24l-.92-9.78-7.57 6.27 6.27-7.57L.5 12l9.78-.92-6.27-7.57 7.57 6.27L12.5 0Z'/%3E%3C/svg%3E");
+      }
+    }
+
+    @media (min-width: 1024px) {
+      #{$root}__title,
+      #{$root}__content {
+        margin-left: auto;
+      }
+
+      #{$root}__media {
+        left: var(--corner);
+      }
+    }
+  }
+
+  &--video {
+    @media (min-width: 1024px) {
+      #{$root}__title {
+        margin-bottom: 0;
+      }
+      #{$root}__content {
+        margin-bottom: 4rem;
+      }
+    }
+  }
+}

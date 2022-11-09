@@ -1,0 +1,11 @@
+.form {
+  &__grid {
+    display: grid;
+    place-items: start;
+    row-gap: 2rem;
+  }
+
+  &__footer {
+    padding-top: 2.4rem;
+  }
+}

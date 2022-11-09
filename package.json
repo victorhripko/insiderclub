@@ -1,0 +1,19 @@
+{
+  "name": "insiderclub",
+  "version": "1.0.0",
+  "license": "MIT",
+  "source": "src/index.pug",
+  "scripts": {
+    "start": "rm -rf .parcel-cache; rm -rf dist; parcel",
+    "build": "parcel build --no-source-maps --public-url ./"
+  },
+  "devDependencies": {
+    "@parcel/transformer-pug": "2.7.0",
+    "@parcel/transformer-sass": "2.7.0",
+    "parcel": "^2.7.0",
+    "process": "^0.11.10",
+    "sharp": "^0.29.1",
+    "youtube-player": "^5.5.2"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
+}

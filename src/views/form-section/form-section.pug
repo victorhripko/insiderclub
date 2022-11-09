@@ -1,0 +1,18 @@
+include ../../components/icon/icon
+section.form-section(data-section="form-section")
+  .container.form-section__container
+    .form-section__block
+      h5.form-section__title
+        | Присоединяйся
+      include ../../components/form/form
+    .form-section__content
+      h6.form-section__subtitle
+        | &ldquo;Тот, кто владеет информацией &mdash; владеет всем!&rdquo;
+      nav.form-section__contacts
+        a.form-section__link(href=`https://telegram.me/${telegram}`, target="_blank")
+          +icon('telegram').form-section__icon
+          | @#{telegram}
+        a.form-section__link(href=`mailto:${email}`)
+          +icon('mail').form-section__icon
+          | #{email}
+  include ../../components/footer/footer

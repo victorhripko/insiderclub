@@ -1,0 +1,12 @@
+include ../button/button
+header.header
+  a.header__logo(href="#!")
+    img(src="./assets/logo.svg" alt="logo")
+  button.header__hamburger(type="button" data-menu="toggle")
+  nav.header__nav
+    a.header__link(href="#!" data-scroll-to="about-club") О клубе
+    a.header__link(href="#!" data-scroll-to="license") Лицензия
+    a.header__link(href="#!" data-scroll-to="about-us") О нас
+    a.header__link(href="#!" data-scroll-to="how-to") Как начать
+    +button().header__button(data-scroll-to="form-section")
+      | Присоедениться

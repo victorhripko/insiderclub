@@ -1,0 +1,17 @@
+include ../../components/button/button
+
+section.hero-section
+  .container
+    h1.hero-section__title
+      | Inside
+      span.show-desktop
+        | &nbsp;&nbsp;&nbsp;
+      span.show-mobile
+      | Club
+    .hero-section__content
+      h2.hero-section__subtitle
+        | Кто мы?
+      p.hero-section__text
+        | Мы — международный клуб профессиональных инвесторов и экспертов в области финансовых рынков, крипто и блокчейн технологий.
+      +button().button--large.hero-section__button(data-scroll-to="form-section")
+        | Присоедениться к клубу

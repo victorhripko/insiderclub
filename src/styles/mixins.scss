@@ -1,0 +1,9 @@
+$transition-duration: 200ms;
+
+@mixin transition($props...) {
+  transition: {
+    property: $props;
+    duration: $transition-duration;
+    timing-function: ease;
+  }
+}

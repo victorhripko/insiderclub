@@ -1,0 +1,6 @@
+mixin form-field(config = {})
+  - const {label, type = "text", placeholder, name, required} = config;
+  label.form-field
+    span.form-field__label
+      | #{label}
+    input.form-field__input(type=type, placeholder=placeholder, name=name, required=required)

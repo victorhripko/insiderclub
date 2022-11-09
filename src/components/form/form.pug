@@ -1,0 +1,10 @@
+include ./form-field/form-field
+include ../button/button
+form.form
+  .form__grid
+    +form-field({label: 'Имя', placeholder: 'John', name: 'name', required: true})
+    +form-field({label: 'Телеграм', placeholder: '@johnjames', name: 'telegram', required: true})
+    +form-field({label: 'Email', type: 'email', placeholder: 'example@gmail.com', name: 'email', required: true})
+  .form__footer
+    +button({type: "link"}).form__submit
+      | Зарегистрироваться

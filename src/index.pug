@@ -1,0 +1,74 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="description" content=`${description}`)
+    meta(name="keywords" content=`${keywords}`)
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel='apple-touch-icon' sizes='180x180' href='./apple-touch-icon.png')
+    link(rel='icon' type='image/png' sizes='32x32' href='./favicon-32x32.png')
+    link(rel='icon' type='image/png' sizes='16x16' href='./favicon-16x16.png')
+    link(rel='mask-icon' href='./safari-pinned-tab.svg' color='#5bbad5')
+    meta(name='msapplication-TileColor' content='#da532c')
+    meta(name='theme-color' content='#ffffff')
+    link(rel="icon" type="image/x-icon" href="./favicon.ico")
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com", crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet")
+    link(rel="stylesheet" href="style.scss")
+    title #{title}
+  body
+    include views/svg-sprite
+    include components/header/header
+    include views/hero-section/hero-section
+    section.section(data-section="about-club")
+      .container.section__grid
+        h5.section__title
+          | Что мы делаем?
+        .section__media
+          img(src="./assets/chart.svg" alt="")
+        .section__content
+          p.section__text
+            | Мы выкупаем монеты, о которых еще не знает мир напрямую у разработчиков.
+          p.section__text
+            | Покупка монет происходит на этапе Приватных раундов.
+          p.section__text
+            | Это один из первых этапов, который проходят все монеты перед выходом на рынок.
+          p.section__text
+            | По этой же схеме работают такие известные платформы, как Binance, Coinbase, зарабатывая на этом миллионы.
+    section.section(data-section="license")
+      .container.section__grid
+        h5.section__title
+          | В чем особенность наших монет?
+        .section__media.section__media--grayscale
+          img(src="./assets/coins.png?as=webp&quality=100" alt="")
+        .section__content
+          p.section__text
+            | Монеты, которые мы выкупаем, проходят жесточайший отбор: только фундаментальные монетки попадают к нам в клуб.
+          p.section__text
+            | Также мы тщательно следим за тем, чтобы стратегическими партнерами этих монет были все те же Binance, Coinbase и другие топовые партнеры.
+    section.section(data-section="about-us")
+      .container.section__grid
+        h5.section__title
+          | В чем наша выгода?
+        .section__media
+          img(src="./assets/laptop.png?as=webp&quality=100" alt="")
+        .section__content
+          p.section__text
+            | Все просто — чем больше наше комьюнити, тем больше приватных раундов доступно нам.
+          p.section__text
+            | Стоит отметить, что мы уже вышли на тот уровень, когда сами разработчики предлагают нам свои монеты.
+    section.section.section--video(data-section="how-to")
+      .container.section__grid
+        .section__content
+          p.section__text
+            | Хотите монеты, которые еще не видел рынок?
+          p.section__text
+            | Хотите быть в первых рядах с такими гигантами, как Binance?
+        .section__media.section__media--video
+          #video
+        h5.section__title
+          | Добро пожаловать в Insider Club!
+    include views/form-section/form-section
+    script(type="module" src="main.js")

@@ -1,0 +1,8 @@
+mixin button(config = {})
+  - const {type = 'button', href = '#!'} = config;
+  if type === 'link'
+    a.button(href=href)&attributes(attributes)
+      block
+  else
+    button.button(type=type)&attributes(attributes)
+      block
