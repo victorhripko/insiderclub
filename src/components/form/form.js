@@ -5,7 +5,7 @@ export const formInit = (form) => {
   const submitButton = form.querySelector(".form__submit");
   const mailRegExp = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
 
-  const targetEmail = "dev.victorhripko@gmail.com";
+  const targetEmail = "insiderclubofficial@gmail.com";
   const mailSubject = "Registration from insiderclub";
 
   const formDataValidation = {
